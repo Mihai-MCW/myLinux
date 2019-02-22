@@ -26,6 +26,12 @@ sudo dnf install $(cat ~/Documents/Personal/FedoraSetup/mine/fedora.packages) -y
 
 # Install the MSCore fonts
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+# Install WPS missing fonts
+sudo mkdir /usr/share/fonts/wps-fonts
+sudo cp -a WPSfonts/. /usr/share/fonts/wps-fonts
+sudo chmod 644 /usr/share/fonts/wps-fonts/*
+sudo fc-cache -vfs
+
 
 # Install Flathub
 sudo dnf install https://dl.flathub.org/repo/flathub.flatpakrepo -y

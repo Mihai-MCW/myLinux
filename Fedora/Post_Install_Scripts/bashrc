@@ -10,8 +10,6 @@ fi
 #################################
 # Set the command prompt format #
 #################################
-
-
 function __setprompt
 {
 	local LAST_COMMAND=$? # Must come first!
@@ -47,9 +45,9 @@ function __setprompt
 		elif [ $LAST_COMMAND == 126 ]; then
 			PS1+="Permission problem or command is not an executable"
 		elif [ $LAST_COMMAND == 127 ]; then
-			PS1+="Command not found"
+			PS1+="Command not found; Possible problem with PATH or a typo"
 		elif [ $LAST_COMMAND == 128 ]; then
-			PS1+="Invalid argument to exit"
+			PS1+="Invalid argument to exit; exit takes only integer args in the range 0 - 255"
 		elif [ $LAST_COMMAND == 129 ]; then
 			PS1+="Fatal error signal 1"
 		elif [ $LAST_COMMAND == 130 ]; then
@@ -134,7 +132,6 @@ PROMPT_COMMAND='__setprompt'
 ############################################
 # Python versioning pyenv
 ############################################
-
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"

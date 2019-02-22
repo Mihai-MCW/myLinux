@@ -57,7 +57,7 @@ lm_sensors
 bash-devel
 mediainfo mkvtoolnix mkvtoolnix-gui
 sha
-nmap
+nmap wireshark iperf ifstat arp-scan
 lynx
 steam wine wine-common wine-core wine-devel
 thunderbird
