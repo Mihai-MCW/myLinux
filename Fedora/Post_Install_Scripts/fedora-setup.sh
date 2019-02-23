@@ -16,6 +16,8 @@ sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/A
 # Install Code repo
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+# Install the libinput copr for touchpad https://copr.fedorainfracloud.org/coprs/mhoeher/multitouch/
+sudo dnf copr enable mhoeher/multitouch
 
 # Update cache for package installs
 sudo dnf update -y
@@ -42,7 +44,14 @@ sudo dnf makecache
 flatpak install skype
 flatpak install wps
 
-# Python versioning pyenv install
+#Custom shell prompt with aliases Source: https://www.linuxquestions.org/questions/linux-general-1/ultimate-prompt-and-bashrc-file-4175518169/
+touch ~/.bashrc_aliases
+#echo '\n # bashrc_aliases config' >> ~/.bashrc
+#echo 'if [ -f ~/.bashrc_aliases ]; 2>&1; then \n . ~/.bashrc_aliases \n fi \n ' >> ~/.bashrc
+cat ./bashrc.aliases >> ~/.bashrc_aliases
+cat ./bashrc >> ~/.bashrc
+
+# Python versioning with pyenv install https://github.com/pyenv/pyenv
 #curl https://pyenv.run | bash
 #curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 #pyenv update
@@ -50,17 +59,16 @@ flatpak install wps
 #echo 'export PATH="/home/mihai-fd/.pyenv/bin:$PATH"' >> ~/.bashrc
 #echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 #echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-
-#Custom shell prompt with aliases Source: https://www.linuxquestions.org/questions/linux-general-1/ultimate-prompt-and-bashrc-file-4175518169/
-touch ~/.bashrc_aliases
-echo '\n # bashrc_aliases config' >> ~/.bashrc
-echo 'if [ -f ~/.bashrc_aliases ]; 2>&1; then \n . ~/.bashrc_aliases \n fi \n ' >> ~/.bashrc
-cat ./bashrc.aliases >> ~/.bashrc_aliases
-cat ./bashrc >> ~/.bashrc
+git clone https://github.com/pyenv/pyenv ~/Software/.pyenv
 
 #Gnome Shell Tweaks
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+# Enabling lib-input gestures https://github.com/bulletmark/libinput-gestures
+#cp /etc/libinput-gestures.conf ~/.config/
+#libinput-gestures-setup start
+#libinput-gestures-setup autostart
 
 
 #Disable Wayland and use Xorg

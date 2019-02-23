@@ -66,6 +66,10 @@ alias sdu='sudo dnf update'
 alias fpks='flatpak search'
 alias fpki='flatpak install'
 
+# alias for what provides
+alias providesdnf='dnf provides'
+alias providesrpm='rpm -qf /bin/'
+
 # alias to show the date
 alias da='date "+%Y-%m-%d %A %T %Z"'
 
@@ -166,7 +170,7 @@ alias ungz='tar -xvzf'
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
 # SHA1
-alias sha1='openssl sha1'
+alias sslsha1='openssl sha1'
 
 # CPU
 alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
@@ -174,38 +178,17 @@ alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END
 # Sensors
 alias watchsensors='watch -n 1 -d sensors'
 
+# libinput gestures
+alias ingesturestart='libinput-gestures-setup start'
+alias ingesturestop='libinput-gestures-setup stop'
+
+# aliases for python
+alias py3='python3'
+alias py2='python2'
 
 #######################################################
 # SPECIAL FUNCTIONS
 #######################################################
-
-# Use the best version of pico installed
-edit ()
-{
-	if [ "$(type -t jpico)" = "file" ]; then
-		# Use JOE text editor http://joe-editor.sourceforge.net/
-		jpico -nonotice -linums -nobackups "$@"
-	elif [ "$(type -t nano)" = "file" ]; then
-		nano -c "$@"
-	elif [ "$(type -t pico)" = "file" ]; then
-		pico "$@"
-	else
-		vim "$@"
-	fi
-}
-sedit ()
-{
-	if [ "$(type -t jpico)" = "file" ]; then
-		# Use JOE text editor http://joe-editor.sourceforge.net/
-		sudo jpico -nonotice -linums -nobackups "$@"
-	elif [ "$(type -t nano)" = "file" ]; then
-		sudo nano -c "$@"
-	elif [ "$(type -t pico)" = "file" ]; then
-		sudo pico "$@"
-	else
-		sudo vim "$@"
-	fi
-}
 
 # Extracts any archive(s) (if unp isn't installed)
 extract () {
