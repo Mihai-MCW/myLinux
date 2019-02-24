@@ -24,7 +24,7 @@ sudo dnf update -y
 sudo dnf makecache
 
 # Install all of my basic packages
-sudo dnf install $(cat ~/Documents/Personal/FedoraSetup/mine/fedora.packages) -y
+sudo dnf install $(cat ./fedora.packages) -y
 
 # Install the MSCore fonts
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
@@ -48,7 +48,6 @@ cat ./bashrc >> ~/.bashrc
 echo -e 'if [ -f ~/.bashrc_aliases ]; then\n. ~/.bashrc_aliases\nfi\n' >> ~/.bashrc
 cat ./bashrc.aliases >> ~/.bashrc_aliases
 
-
 # Python versioning with pyenv install https://github.com/pyenv/pyenv
 # don't forget to [pyenv rehash] after installing python versions
 # then you can use [pyenv global x.x.x] to set the global path
@@ -59,7 +58,7 @@ echo '###########################\n# pyenv python versioning #\n################
 echo 'export PYENV_ROOT="$HOME/Software/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi\n' >> ~/.bashrc
-# Now install virtualenv
+# Install virtualenv
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 echo '# pyenv plugin virtualenv' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
@@ -70,14 +69,22 @@ cd ~/Software/NetBeans
 # extra steps needed
 ant
 
-#Gnome Shell Tweaks
+# Gnome Shell Tweaks
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+# Extensions installation
+sudo dnf install $(cat ./gnome.extensions) -y
+
+# Noice cancellationpulse
+sudo cp /etc/pulse/default.pa /etc/pulse/default.pa.bak
+sudo bash -c 'echo -e "\n# Noise cancellation fix\nload-module module-echo-cancel source_name=noechosource sink_name=noechosink\nset-default-source noechosource\nset-default-sink noechosink" >> /etc/pulse/default.pa'
+pulseaudio -k
 
 #Disable Wayland and use Xorg
 #sudo sed -i '/WaylandEnable/s/^#//g' /etc/gdm/custom.conf
 
-#Install Visual Paradigm GUI https://www.visual-paradigm.com/download/community.jsp?platform=linux&arch=64bit
+#Install Visual Paradigm (GUI install) https://www.visual-paradigm.com/download/community.jsp?platform=linux&arch=64bit
 wget https://www.visual-paradigm.com/downloads/vpce/Visual_Paradigm_CE_Linux64.sh -O ~/Downloads/visualParadigm.sh
 sh ~/Downloads/visualParadigm.sh
 

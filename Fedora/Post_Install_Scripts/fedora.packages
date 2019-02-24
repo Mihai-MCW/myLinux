@@ -106,6 +106,7 @@ openshot
 openssh-server
 patch
 playonlinux
+ps_mem
 pyrit
 python-matplotlib
 python-nose
