@@ -1,74 +1,149 @@
-curl
-cabextract
-xorg-x11-font-utils
-fontconfig
-google-chrome-stable
+aircrack-ng
+ant
+ardour5
+arm-image-installer
+arm-none-eabi-binutils-cs
+arm-none-eabi-gcc-cs
+arm-none-eabi-gcc-cs-c++
+arp-scan
+atlas-devel
 atom
+audacity
 autoconf
-ocaml-autoconf
 automake
-binutils binutils-devel
-nacl-arm-binutils
+avr-gcc-c++
+bash-devel
+binutils
+binutils-arm-linux-gnu
+binutils-devel
 binutils-sh-linux-gnu
-bison bison-runtime bison-devel
+bison
+bison-devel
+bison-runtime
+blender
+bluez
+bluez-hcidump
+bmake
+byacc
+byaccj
+cabextract
+chrome-gnome-shell
+clang
+cmake
+cmake-gui
+code
+cowpatty
+cross-binutils-common
+ctags
+curl
+darktable
 dconf-editor
 discord
-code
+discord
+dkms
+dropbox
+eclipse
+ffmpeg
+ffmpeg-libs
 flex
 flex-devel
-fontforge fontforge-devel
-gcc gcc-c++ git
-glibc-headers glibc-devel
+fontconfig
+fontforge
+fontforge-devel
+gcc
+gcc-arm-linux-gnu
+gcc-c++
+gcc-c++-arm-linux-gnu
+gimp
+git
+glibc-arm-linux-gnu
+glibc-devel
+glibc-headers
 gnome-tweak-tool
+gnome-tweaks
+google-chrome-stable
 gparted
-htop 
-httpd mysql mysql-server
+graphviz
+htop
+httpd
+https://mega.nz/linux/MEGAsync/Fedora_29/x86_64/megasync-Fedora_29.x86_64.rpm
+ifstat
+inkscape
+iperf
+ipython
+iw
+kdenlive
 kernel-devel
 kernel-headers
+kismet
+krita
+ksysguard
 lame
 libgomp
 libtool
+lm_sensors
+lynx
 make
 mc
+mediainfo
+mkvtoolnix
+mkvtoolnix-gui
 mpv
+mpv-libs
+mpv-libs-devel
 multitail
+mysql
+mysql-server
+nacl-arm-binutils
+nano
+nautilus-dropbox
 net-tools
+nmap
+numpy
+ocaml
+ocaml-autoconf
+openshot
 openssh-server
 patch
-qt qt-devel
-remmina remmina-plugins-rdp
+playonlinux
+pyrit
+python-matplotlib
+python-nose
+python-pandas
+python2-scikit-image
+python2-scikit-learn
+python3-ply
+python3-scikit-image
+python3-scikit-learn
+qemu-user
+qt
+qt-devel
+reaver
+remmina
+remmina-plugins-rdp
+scikit-image-tools
+scipy
+scribus
+sha
+shotcut
 shutter
 simplescreenrecorder
-tree
-chrome-gnome-shell
-ctags
-cmake bmake cmake-gui clang
-dkms
-mpv-libs mpv-libs-devel
-gnome-tweaks
-gcc-c++-arm-linux-gnu gcc-arm-linux-gnu binutils-arm-linux-gnu arm-none-eabi-gcc-cs-c++ glibc-arm-linux-gnu arm-image-installer arm-none-eabi-gcc-cs arm-none-eabi-binutils-cs qemu-user cross-binutils-common
-byacc byaccj vim-syntastic-yacc
-vim nano
-python3-ply
-avr-gcc-c++
-graphviz
 spin
-ocaml
-lm_sensors
-bash-devel
-mediainfo mkvtoolnix mkvtoolnix-gui
-sha
-nmap wireshark iperf ifstat arp-scan
-lynx
-steam wine wine-common wine-core wine-devel playonlinux
-thunderbird
-dropbox nautilus-dropbox
-https://mega.nz/linux/MEGAsync/Fedora_29/x86_64/megasync-Fedora_29.x86_64.rpm
+steam
+sympy
+synfig
 teamviewer
-discord
-vlc-core vlc-devel ffmpeg ffmpeg-libs
-audacity ardour5
-kdenlive openshot shotcut blender gimp inkscape krita darktable
-synfig scribus
-numpy scipy python-matplotlib ipython python-pandas sympy python-nose atlas-devel
-scikit-image-tools python2-scikit-image python2-scikit-learn python3-scikit-image python3-scikit-learn
+thunderbird
+tree
+ubertooth
+ubertooth-devel
+vim
+vim-syntastic-yacc
+vlc-core
+vlc-devel
+wine
+wine-common
+wine-core
+wine-devel
+wireshark
+xorg-x11-font-utils
