@@ -52,6 +52,12 @@ echo '# Use ls colors' >> ~/.bashrc
 echo 'eval $(dircolors -b $HOME/.LS_COLORS)' >> ~/.bashrc
 #cat ./LS_COLORS >> ~/.LS_COLORS
 
+# If ~./inputrc doesn't exist yet, first include the original /etc/inputrc so we don't override it
+if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+# Add option to ~/.inputrc to enable case-insensitive tab completion
+echo 'set completion-ignore-case On' >> ~/.inputrc
+
+
 # Gnome Shell Tweaks
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
